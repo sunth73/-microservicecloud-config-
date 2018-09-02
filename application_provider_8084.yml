@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: 
+    - dev
+---
+server:
+     port: 8084
+spring:
+  profiles: dev
+  application:
+    name: provider_8084
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:8765/eureka/
