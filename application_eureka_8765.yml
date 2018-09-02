@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8765
+spring:
+  profiles: dev
+eureka:
+  instance:
+    hostname: eureka_server_8765
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:${server.port}}/eureka/
